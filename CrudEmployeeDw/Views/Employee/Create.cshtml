@@ -1,0 +1,33 @@
+﻿@model Employee
+
+<form id="employeeForm" method="post">
+    <div id="validationSummary"></div>
+
+    <div class="form-group">
+        <label asp-for="Name">Nombre</label>
+        <input asp-for="Name" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="BirthDate">Fecha de Nacimiento</label>
+        <input asp-for="BirthDate" type="date" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Salary">Salario</label>
+        <input asp-for="Salary" type="number" step="0.01" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Email">Email</label>
+        <input asp-for="Email" type="email" class="form-control" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la Lista</a>
+
+</form>
+
+@section Scripts {
+    <script src="~/js/employeeValidation.js"></script>
+}
